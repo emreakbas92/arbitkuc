@@ -2,25 +2,25 @@ const express = require('express');
 const https = require('https');
 const app = express();
 const tokens = [
-  { symbol: "KUNCIUSDT", contract: "0x6cf271270662be1C4fc1b7BB7D7D7Fc60Cc19125-bsc" },
-  { symbol: "SFUNDUSDT", contract: "0x477bC8d23c634C154061869478bce96BE6045D12-bsc" },
-  { symbol: "KMONUSDT", contract: "0xc732B6586A93b6B7CF5FeD3470808Bc74998224D-bsc" },
-  { symbol: "ERTHAUSDT", contract: "0x62823659d09F9F9D2222058878f89437425eB261-bsc" },
-  { symbol: "FAMEUSDT", contract: "0x28cE223853D123b52C74439B10b43366d73Fd3B5-bsc" },
-  { symbol: "GSTSUSDT", contract: "0x7eDC0eC89F987ECd85617b891c44fE462a325869-bsc" },
-  { symbol: "TAPUSDT", contract: "0x35bEdBF9291b22218a0dA863170dcC9329Ef2563-bsc" },
-  { symbol: "MIXUSDT", contract: "0x398f7827DcCbeFe6990478876bBF3612D93baF05-bsc" },
-  { symbol: "ZAMUSDT", contract: "0xBbcF57177D8752B21d080bf30a06CE20aD6333F8-bsc" },
-  { symbol: "FIUUSDT", contract: "0xEF7d50069406A2F5A53806f7250A6c0f17AD9dCD-bsc" },
-  { symbol: "VINUUSDT", contract: "0xfEbe8C1eD424DbF688551D4E2267e7A53698F0aa-bsc" },
-  { symbol: "RACAUSDT", contract: "0x12BB890508c125661E03b09EC06E404bc9289040-bsc" },
-  { symbol: "DRIVUSDT", contract: "0x461daB902f38210b42b7D8B4bfc71296E0629006-bsc" },
-  { symbol: "MNZUSDT", contract: "0x861f1E1397daD68289e8f6a09a2ebb567f1B895C-bsc" },
-  { symbol: "HEROUSDT", contract: "0xD40bEDb44C081D2935eebA6eF5a3c8A31A1bBE13-bsc" },
-  { symbol: "XWGUSDT", contract: "0x6b23C89196DeB721e6Fd9726E6C76E4810a464bc-bsc" },
-  { symbol: "MCRTUSDT", contract: "0x4b8285aB433D8f69CB48d5Ad62b415ed1a221e4f-bsc" },
-  { symbol: "CAPSUSDT", contract: "0xFfBa7529AC181c2Ee1844548e6D7061c9A597dF4-bsc" },
-  { symbol: "WWYUSDT", contract: "0x9Ab70e92319f0b9127df78868Fd3655fB9f1E322-bsc" },
+  { symbol: "ZBC-USDT", contract: "ZBC" },
+  { symbol: "SLCL-USDT", contract: "SLCL" },
+  { symbol: "PLD-USDT", contract: "PLD" },
+  { symbol: "GST-USDT", contract: "GST" },
+  { symbol: "HAWK-USDT", contract: "HAWK" },
+  { symbol: "GMT-USDT", contract: "GMT" },
+  { symbol: "RACEFI-USDT", contract: "RACEFI" },
+  { symbol: "GARI-USDT", contract: "GARI" },
+  { symbol: "SLIM-USDT", contract: "SLIM" },
+  { symbol: "SRM-USDT", contract: "SRM" },
+  { symbol: "HBB-USDT", contract: "HBB" },
+  { symbol: "FCON-USDT", contract: "FCON" },
+  { symbol: "FIDA-USDT", contract: "FIDA" },
+  { symbol: "LIKE-USDT", contract: "LIKE" },
+  { symbol: "AURY-USDT", contract: "AURY" },
+  { symbol: "XTAG-USDT", contract: "XTAG" },
+  { symbol: "CWAR-USDT", contract: "CWAR" },
+  { symbol: "SHILL-USDT", contract: "SHILL" },
+  { symbol: "SOLR-USDT", contract: "SOLR" },
   { symbol: "SONUSDT", contract: "0x3b0E967cE7712EC68131A809dB4f78ce9490e779-bsc" },
   { symbol: "STRMUSDT", contract: "0xC598275452fA319d75ee5f176FD3B8384925b425-bsc" },
   { symbol: "SLGUSDT", contract: "0x2348b010Fa9c0Ce30Bb042D54c298a3411361a01-bsc" },
@@ -60,8 +60,8 @@ const tokens = [
 let al, sat;
 setInterval(() => {
   tokens.forEach((token) => {
-    // Get the ask and bid prices for the token from Bybit
-    https.get(`https://api.bybit.com/spot/quote/v1/ticker/24hr?symbol=${token.symbol}`, (res) => {
+    // Get the ask and bid prices for the token from Huobi
+    https.get(`https://api.kucoin.com/api/v1/market/stats?symbol=${token.symbol}`, (res) => {
       let data = "";
       res.on("data", (chunk) => {
         data += chunk;
@@ -69,9 +69,9 @@ setInterval(() => {
       res.on("end", () => {
         try {
           const json = JSON.parse(data);
-          if(!json.result || !json.result.bestBidPrice || !json.result.bestAskPrice) return;
-          const ask = json.result.bestAskPrice;
-          const bid = json.result.bestBidPrice;
+          if(!json.data || !json.data.buy || !json.data.sell) return;
+          const ask = json.data.sell;
+          const bid = json.data.buy;
 
           // Get the price of the token on the BSC network from Dex.guru
           https.get(`https://api.dex.guru/v1/tokens/${token.contract}`, (res) => {
