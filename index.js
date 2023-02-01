@@ -91,7 +91,7 @@ const tokens = [
 let al, sat;
 setInterval(() => {
   tokens.forEach((token) => {
-    // Get the ask and bid prices for the token from Huobi
+    // Get the ask and bid prices for the token from Kucoin
     https.get(`https://api.kucoin.com/api/v1/market/stats?symbol=${token.symbol}`, (res) => {
       let data = "";
       res.on("data", (chunk) => {
@@ -124,7 +124,7 @@ setInterval(() => {
                     try {
                       const json = JSON.parse(data);
                       let jupPrice = json.data.price;
-                      // Calculate the ratio of the Huobi ask price to the BSC price
+                      // Calculate the ratio of the Kucoin ask price to the BSC price
                       token.al_dex = price / bid;
                       token.al_jup = jupPrice / bid;
                       token.sat_dex = price / ask;
@@ -162,10 +162,10 @@ app.get("/", (req, res) => {
       <tr>
         <th>Symbol</th>
         <th>Contract Address</th>
-        <th>BSC/Bybit Bid Ratio</th>
-        <th>Bybit/BSC Ask Ratio</th>
-        <th>Jup/Bybit Ask Ratio</th>
-        <th>Bybit/Jup Ask Ratio</th>
+        <th>BSC/Kucoin Bid Ratio</th>
+        <th>Kucoin/BSC Ask Ratio</th>
+        <th>Jup/Kucoin Ask Ratio</th>
+        <th>Kucoin/Jup Ask Ratio</th>
       </tr>
       ${tokens.map(token => {
         if (token.al_dex < 0.98 || token.sat_dex > 1.02 || token.sat_jup > 1.01 || token.al_jup < 0.99) {
@@ -191,4 +191,5 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
 
