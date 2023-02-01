@@ -44,7 +44,6 @@ const tokens = [
   { symbol: "BLOK-USDT", contract: "0xA0d96fD642156FC7E964949642257b3572f10cD6-bsc" },
   { symbol: "BLOK-USDT", contract: "0x229b1b6c23ff8953d663c4cbb519717e323a0a84-polygon" },
   { symbol: "IXS-USDT", contract: "0x1ba17c639bdaecd8dc4aac37df062d17ee43a1b8-polygon" },
-  { symbol: "SWP-USDT", contract: "0xabEDe05598760E399ed7EB24900b30C51788f00F-polygon" },
   { symbol: "NAKA-USDT", contract: "0x311434160D7537be358930def317AfB606C0D737-polygon" },
   { symbol: "WOMBAT-USDT", contract: "0x0C9c7712C83B3C70e7c5E11100D33D9401BdF9dd-polygon" },
   { symbol: "VOXEL-USDT", contract: "0xd0258a3fd00f38aa8090dfee343f10a9d4d30d3f-polygon" },
@@ -79,11 +78,7 @@ const tokens = [
   { symbol: "GGG-USDT", contract: "0xd8047afecb86e44eff3add991b9f063ed4ca716b-bsc" },
   { symbol: "RACA-USDT", contract: "0x12BB890508c125661E03b09EC06E404bc9289040-bsc" },
   { symbol: "CHMB-USDT", contract: "0x5492Ef6aEebA1A3896357359eF039a8B11621b45-bsc" },
-  { symbol: "TKO-USDT", contract: "0x9f589e3eabe42ebc94a44727b3f3531c0c877809-bsc" },
-  { symbol: "MBOX-USDT", contract: "0x3203c9e46ca618c8c1ce5dc67e7e9d75f5da2377-bsc" },
   { symbol: "WOOP-USDT", contract: "0x8b303d5bbfbbf46f1a4d9741e491e06986894e18-bsc" },
-  { symbol: "NFTB-USDT", contract: "0xde3dbbe30cfa9f437b293294d1fd64b26045c71a-bsc" },
-  { symbol: "FCD-USDT", contract: "0xf78610D0a197842bF98ca45254897edd13c5D182-polygon" },
   { symbol: "UPO-USDT", contract: "0x9dbfc1cbf7a1e711503a29b4b5f9130ebeccac96-polygon" }
 ];
 
