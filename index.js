@@ -13,7 +13,6 @@ const tokens = [
   { symbol: "SLIM-USDT", contract: "SLIM" },
   { symbol: "SRM-USDT", contract: "SRM" },
   { symbol: "HBB-USDT", contract: "HBB" },
-  { symbol: "FCON-USDT", contract: "FCON" },
   { symbol: "FIDA-USDT", contract: "FIDA" },
   { symbol: "LIKE-USDT", contract: "LIKE" },
   { symbol: "AURY-USDT", contract: "AURY" },
