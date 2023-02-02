@@ -28,8 +28,7 @@ const tokens = [
   { symbol: "TLM-USDT", contract: "0x2222227e22102fe3322098e4cbfe18cfebd57c95-bsc" },
   { symbol: "TRVL-USDT", contract: "0x6a8Fd46F88dBD7bdC2D536C604f811C63052ce0F-bsc" },
   { symbol: "FALCONS-USDT", contract: "0xB139eD26b743C7254A246cf91eb594D097238524-bsc" },
-  { symbol: "MSWAP-USDT", contract: "0xdD5a149740c055bdcdC5C066888f739DBe0bf2d0-bsc" },  
-  { symbol: "TAUM-USDT", contract: "0x02e22eb7f6e73ef313dd71248cd164b1bdc5aadd-bsc" },
+  { symbol: "MSWAP-USDT", contract: "0xdD5a149740c055bdcdC5C066888f739DBe0bf2d0-bsc" },  { symbol: "TAUM-USDT", contract: "0x02e22eb7f6e73ef313dd71248cd164b1bdc5aadd-bsc" },
   { symbol: "DPR-USDT", contract: "0xa0a2ee912caf7921eaabc866c6ef6fec8f7e90a4-bsc" },
   { symbol: "DREAMS-USDT", contract: "0x54523d5fb56803bac758e8b10b321748a77ae9e9-bsc" },
   { symbol: "OLE-USDT", contract: "0xa865197A84E780957422237B5D152772654341F3-bsc" },  
@@ -82,13 +81,8 @@ const tokens = [
   { symbol: "GGG-USDT", contract: "0xd8047afecb86e44eff3add991b9f063ed4ca716b-bsc" },
   { symbol: "RACA-USDT", contract: "0x12BB890508c125661E03b09EC06E404bc9289040-bsc" },
   { symbol: "CHMB-USDT", contract: "0x5492Ef6aEebA1A3896357359eF039a8B11621b45-bsc" },
-  { symbol: "TKO-USDT", contract: "0x9f589e3eabe42ebc94a44727b3f3531c0c877809-bsc" },
-  { symbol: "MBOX-USDT", contract: "0x3203c9e46ca618c8c1ce5dc67e7e9d75f5da2377-bsc" },
   { symbol: "XCUR-USDT", contract: "0xd52669712f253CD6b2Fe8A8638F66ed726cb770C-bsc" },
   { symbol: "WOOP-USDT", contract: "0x8b303d5bbfbbf46f1a4d9741e491e06986894e18-bsc" },
-  { symbol: "WOOP-USDT", contract: "0x8b303d5bbfbbf46f1a4d9741e491e06986894e18-bsc" },
-  { symbol: "NFTB-USDT", contract: "0xde3dbbe30cfa9f437b293294d1fd64b26045c71a-bsc" },
-  { symbol: "FCD-USDT", contract: "0xf78610D0a197842bF98ca45254897edd13c5D182-polygon" },
   { symbol: "UPO-USDT", contract: "0x9dbfc1cbf7a1e711503a29b4b5f9130ebeccac96-polygon" }
 ];
 
@@ -195,5 +189,6 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
 
 
