@@ -83,7 +83,17 @@ const tokens = [
   { symbol: "CHMB-USDT", contract: "0x5492Ef6aEebA1A3896357359eF039a8B11621b45-bsc" },
   { symbol: "XCUR-USDT", contract: "0xd52669712f253CD6b2Fe8A8638F66ed726cb770C-bsc" },
   { symbol: "WOOP-USDT", contract: "0x8b303d5bbfbbf46f1a4d9741e491e06986894e18-bsc" },
-  { symbol: "UPO-USDT", contract: "0x9dbfc1cbf7a1e711503a29b4b5f9130ebeccac96-polygon" }
+  { symbol: "UPO-USDT", contract: "0x9dbfc1cbf7a1e711503a29b4b5f9130ebeccac96-polygon" },
+  { symbol: "MAGIC-USDT", contract: "0x539bdE0d7Dbd336b79148AA742883198BBF60342-arbitrum" },  
+  { symbol: "GMX-USDT", contract: "0xfc5A1A6EB076a2C7aD06eD22C90d7E710E35ad0a-arbitrum" },
+  { symbol: "GRAIL-USDT", contract: "0x3d9907F9a368ad0a51Be60f7Da3b97cf940982D8-arbitrum" },
+  { symbol: "DPX-USDT", contract: "0x6c2c06790b3e3e3c38e12ee22f8183b37a13ee55-arbitrum" },
+  { symbol: "GNS-USDT", contract: "0x18c11FD286C5EC11c3b683Caa813B77f5163A122-arbitrum" },
+  { symbol: "SYN-USDT", contract: "0x080f6aed32fc474dd5717105dba5ea57268f46eb-arbitrum" },
+  { symbol: "HALO-USDT", contract: "0xB6b8CCD230Bb4235C7b87986274E7aB550b72261-bsc" },
+  { symbol: "AIPAD-USDT", contract: "0xE55d97A97ae6A17706ee281486E98A84095d8AAf-bsc" },
+  { symbol: "GOAL-USDT", contract: "0xc4736f2611a62d545dc2d0d8f0766283617e6fcb-bsc" },  
+  { symbol: "RDNT-USDT", contract: "0x0C4681e6C0235179ec3D4F4fc4DF3d14FDD96017-arbitrum" }
 ];
 
 let al, sat;
